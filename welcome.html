@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News letter Subscription</title>
+    <style>
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            flex-direction: column;
+            overflow: hidden;
+            animation: backgroundColorChange 10s infinite; /* Animation for background color change */
+        }
+
+        /* Top image styling */
+        .top-image {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            z-index: 1000;
+        }
+
+        /* Welcome Text Styling */
+        .welcome-text {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        /* Newsletter box styling */
+        .newsletter-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .newsletter-container h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .newsletter-container p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .input-container input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+
+        .input-container button {
+            padding: 10px 20px;
+            background-color: #00ff62;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        /* Animation for background color change */
+        @keyframes backgroundColorChange {
+            0% {
+                background-color: red;
+            }
+            25% {
+                background-color: #FF7A00;
+            }
+            50% {
+                background-color: green;
+            }
+            75% {
+                background-color: goldenrod;
+            }
+            100% {
+                background-color: violet;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Image at the top of the screen -->
+    <img src="front-image.jpg" alt="" class="front-image">
+
+    <!-- Welcome Text -->
+    <div class="welcome-text">
+        <p><h1>Welcome to Our News App!</h1></p>
+    </div>
+    <p>Stay updated with the latest news and trends.</p>
+    <div class="newsletter-container" id="newsletter-box">
+        <h2>Subscribe to the NewsLetter</h2>
+        <p>Stay updated with the latest news and trends.</p>
+        <div class="input-container">
+            <input type="email" placeholder="Enter Your Email" id="email-input">
+            <a href="Technology.html"><button id="Subscribe">Subscribe</button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let newsletterBox = document.getElementById("newsletter-box");
+
+            function adjustAlignment() {
+                let windowHeight = window.innerHeight;
+                let windowWidth = window.innerWidth;
+
+                newsletterBox.style.top = windowHeight / 2 + "px";
+                newsletterBox.style.left = windowWidth / 2 + "px";
+                newsletterBox.style.transform = "translate(-50%, -50%)";
+            }
+
+            // Adjust alignment on window resize
+            window.addEventListener("resize", adjustAlignment);
+            adjustAlignment();
+        });
+    </script>
+</body>
+</html>
